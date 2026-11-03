@@ -336,8 +336,179 @@ a.button.lavender:hover,a.consultation-button:hover,a.button.lavender:focus-visi
 a.button .cta-arrow,a.consultation-button .cta-arrow{width:16px;height:16px;flex:0 0 16px;fill:none;stroke:currentColor;stroke-width:1.6}
 @media(prefers-reduced-motion:reduce){a.button.lavender,a.consultation-button{transition:none}}
 
-.about-motto{position:relative;max-width:490px;margin:36px 0 0;padding:24px 0 0 28px;border-top:1px solid #dfb9f447;border-left:2px solid var(--lavender)}.about-motto p{font-family:var(--serif);font-size:clamp(28px,2.6vw,36px);font-weight:500;line-height:1.2;color:var(--cream);margin:0;text-wrap:balance}.about-motto-mark{display:block;font-family:Georgia,serif;font-size:58px;line-height:.7;color:var(--lavender);margin-bottom:8px}
+.about-motto{position:relative;max-width:490px;margin:24px 0 0;padding:16px 0 0 38px;border-top:1px solid #dfb9f447;border-left:2px solid var(--lavender)}.about-motto p{font-family:var(--serif);font-size:clamp(24px,2.1vw,29px);font-weight:500;line-height:1.2;color:var(--cream);margin:0;text-wrap:balance}.about-motto-mark{position:absolute;left:10px;top:18px;font-family:Georgia,serif;font-size:34px;line-height:1;color:var(--lavender)}
 
 .consultation-scope a.button.lavender{background:linear-gradient(115deg,#dfb9f4,#ecd4fa);background-size:180% 100%;color:var(--ink);border:1px solid #a987bb}
 .consultation-scope a.button.lavender:hover,.consultation-scope a.button.lavender:focus-visible{background-position:100% 50%;color:var(--ink);box-shadow:0 0 18px #dfb9f455}
 .consultation-scope a.button.lavender:focus-visible{outline:2px solid var(--ink);outline-offset:4px}
+
+/* Mobile layout: content determines height and controls retain touch space. */
+@media(max-width:700px){
+ :root{--page-gutter:20px;--section-title:36px}
+ .hero-wrap .header{position:relative;width:calc(100% - 48px);gap:0 8px;min-height:0;height:auto;padding:6px 8px 2px;border-width:2px;border-top:0;border-radius:0 0 16px 16px}
+ .hero-wrap .header .brand{min-width:0;flex-shrink:1;font-size:15px;line-height:1.2;gap:8px}
+ .hero-wrap .header .brand small{font-size:11px;line-height:1.3;margin-top:3px}
+ .header .menu-toggle{flex-shrink:0;width:44px;height:44px}
+ .hero-wrap .menu{top:100%;right:0;min-width:0;width:min(300px,100%);max-height:65dvh;overflow:auto}
+ .hero-wrap .hero h1{font-size:clamp(52px,15vw,76px);line-height:.95}
+ .hero .actions{align-items:flex-start;flex-direction:column}
+ .hero .consultation-button{max-width:100%;font-size:15px;white-space:normal;text-align:center;min-height:48px}
+ .consultation-button__label{min-width:0;white-space:normal}
+ .hero-services-link{display:inline-flex;align-items:center;min-height:44px}
+ .services .service-grid{grid-template-columns:1fr;grid-template-rows:none;grid-auto-rows:auto}
+ .services .service-grid .service{grid-column:1;grid-row:auto;min-height:310px;padding:24px}
+ .services .service-grid .keeping{min-height:360px}
+ .services .service-grid .consult{min-height:270px}
+ .services .service-grid .service h3{font-size:32px}
+ .services .service-grid .service p{font-size:16px;line-height:1.5}
+ .consultation-scope{grid-template-columns:minmax(0,1fr);padding:24px 20px;gap:24px}
+ .consultation-scope .button{max-width:100%;white-space:normal}
+ .service-choice .sd-package{padding:24px 20px}
+ .about-copy{width:100%;min-width:0}
+ .about-motto{padding-left:34px;margin-top:20px}
+ .practice-card,.tax-case{padding:24px 20px;min-width:0}
+ .tax-case-numbers{flex-wrap:wrap;gap:16px}
+ .case-document{transform:none;box-shadow:5px 5px 0 #dfb9f431}
+ .faq-trigger{min-height:48px;gap:16px;text-align:left}
+ .faq-trigger span{min-width:0}
+ .faq-trigger svg{flex-shrink:0}
+ .contact-bar{padding:24px 18px}
+ .contact h2{font-size:clamp(30px,8vw,36px)}
+ .personal-contact{width:fit-content;max-width:100%;margin-inline:auto;flex-wrap:wrap;justify-content:flex-start;gap:8px;padding:10px 12px;border-radius:20px 4px 20px 20px}
+ .personal-contact-person{min-width:0;flex:1 1 100%}
+ .personal-contact-person>div{min-width:0}
+ .contact-options .personal-contact-link{margin:0;min-height:48px}
+ .contact-direct-phone{font-size:15px;flex-wrap:wrap}
+ .footer .brand{min-width:0;gap:10px}
+ .footer .brand>span:last-child{min-width:0}
+ .footer .brand small{white-space:normal;line-height:1.5;letter-spacing:.03em}
+ .footer-reach,.footer-docs{min-width:0}
+ .footer-docs a{overflow-wrap:anywhere}
+ .footer .social-chips{gap:8px}
+ .cookie-notice{left:12px;right:12px;width:auto;max-width:none;max-height:calc(100dvh - 24px);padding:20px}
+}
+@media(hover:none){.service:hover{transform:none}.service:hover img{transform:none}}
+
+/* Brand accent shared by the header and footer. */
+.monogram span{color:var(--lavender)}
+
+/* Compact personal messenger strip. */
+.contact-options .personal-contact{display:grid;grid-template-columns:minmax(0,1fr) auto 44px;width:fit-content;max-width:100%;gap:10px;padding:8px;margin-inline:auto;border-radius:22px 4px 22px 22px}
+.personal-contact .personal-contact-person{gap:8px;min-width:0}
+.personal-contact .personal-contact-person strong{font-size:14px;line-height:1.3}
+.personal-contact .personal-contact-person div>span{font-size:12px;line-height:1.4;color:#d1c7bc}
+.contact-options .personal-contact .personal-contact-link{margin:0;min-height:44px;padding:8px 12px;gap:6px}
+.personal-contact-max{display:flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid #dfb9f466;border-radius:14px 4px 14px 14px;color:var(--lavender)}
+.personal-contact-max:hover{background:#dfb9f422}
+.personal-contact-max svg{width:20px;height:20px}
+@media(max-width:700px){
+ .contact-options .personal-contact{width:100%;gap:6px;padding:6px;grid-template-columns:minmax(0,1fr) auto 44px}
+ .personal-contact .personal-contact-avatar,.personal-contact .personal-contact-photo{width:32px;height:32px;flex-basis:32px}
+ .personal-contact .personal-contact-person{gap:6px}
+ .personal-contact .personal-contact-person strong{font-size:12px}
+ .personal-contact .personal-contact-person div>span{font-size:11px}
+ .contact-options .personal-contact .personal-contact-link{padding:8px;gap:4px}
+ .contact-options .personal-contact .personal-contact-link span{font-size:12px}
+}
+@media(max-width:400px){
+ .contact-options .personal-contact{grid-template-columns:minmax(0,1fr) 44px 44px}
+ .personal-contact .personal-contact-link span{display:none}
+}
+
+/* Both messenger destinations retain their visible labels. */
+.contact-options .personal-contact{grid-template-columns:minmax(0,1fr) 112px 112px}
+.contact-options .personal-contact .personal-contact-link,.personal-contact-max{width:100%;min-height:44px;gap:6px;font-size:14px;justify-content:center}
+.personal-contact-max{padding:8px 12px}
+@media(max-width:700px){
+ .contact-options .personal-contact{grid-template-columns:repeat(2,minmax(0,1fr));width:fit-content;min-width:min(100%,260px);gap:8px}
+ .personal-contact .personal-contact-person{grid-column:1/-1}
+ .contact-options .personal-contact .personal-contact-link span{display:inline;font-size:14px}
+}
+
+/* Mobile header: a single compact identity row without the phone row. */
+@media(max-width:700px){
+ .hero-wrap .header{padding:10px 8px;flex-wrap:nowrap;gap:8px}
+ .hero-wrap .header .header-phone{display:none}
+ .hero-wrap .header .brand{font-size:15px;line-height:1.2;gap:8px}
+ .hero-wrap .header .brand small{font-size:11px;line-height:1.3;margin-top:3px}
+ .hero-wrap .header .monogram{width:34px;height:37px;font-size:29px;flex-shrink:0}
+ .hero-wrap .header .monogram span{font-size:26px;left:12px;top:10px}
+ .hero-wrap .header .menu-toggle{width:44px;height:44px;margin-left:auto}
+}
+
+/* Quiet legal information at the very bottom of the footer. */
+.footer .footer-bottom{grid-template-columns:minmax(0,1fr) auto;gap:4px 16px;padding-top:10px;font-size:12px;line-height:1.5}
+.footer .footer-bottom>span{grid-column:1;grid-row:1}
+.footer .footer-bottom .footer-top{grid-column:2;grid-row:1;min-height:24px}
+.footer .footer-docs{grid-column:1/-1;grid-row:2;display:flex;flex-direction:row;flex-wrap:wrap;gap:2px 18px;align-items:center}
+.footer .footer-docs a,.footer .footer-docs .cookie-settings{display:inline-flex;align-items:center;min-height:24px;padding:2px 0;font-size:12px;line-height:1.5;text-underline-offset:3px}
+@media(max-width:700px){.footer .footer-docs{flex-direction:column;align-items:flex-start;gap:2px}}
+
+/* Quiet lilac washes echo the botanical accent without extra image assets. */
+.services{background-image:radial-gradient(ellipse 180px 290px at 0 16%,#dfb9f426,transparent 74%);background-repeat:no-repeat}
+.faq{background-image:radial-gradient(ellipse 210px 300px at 100% 50%,#dfb9f422,transparent 75%);background-repeat:no-repeat}
+@media(max-width:700px){
+ .services{background-image:radial-gradient(ellipse 80px 200px at 0 6%,#dfb9f41c,transparent 75%)}
+ .faq{background-image:radial-gradient(ellipse 85px 240px at 100% 50%,#dfb9f41c,transparent 75%)}
+}
+
+@media(min-width:701px){.about-motto{margin-top:40px}}
+
+/* Consultation: introduction, two clear outcomes, then one next step. */
+.consultation-scope{grid-template-columns:minmax(0,1fr);gap:28px;background:radial-gradient(ellipse at 18% 15%,#faf6fc 0,transparent 65%),#efe8f2}
+.consultation-scope-intro{max-width:740px}
+.consultation-scope-intro p{max-width:62ch;margin-top:16px}
+.consultation-scope-content{display:grid;grid-template-columns:1.15fr 1fr;gap:40px}
+.consultation-scope-content>div{min-width:0;border-top:1px solid #bda9c166;padding-top:20px}
+.services .consultation-scope-content h4{margin:0 0 12px;font-size:19px}
+.consultation-scope-content ul{margin:0;padding-left:20px}
+.consultation-next{display:flex;align-items:center;gap:26px;padding-top:22px;border-top:1px solid #bda9c166}
+.consultation-scope .consultation-next .button{margin-top:0;flex-shrink:0}
+.services .consultation-next p{font-size:16px;line-height:1.6;max-width:60ch}
+.services .consultation-scope .consultation-extra{font-size:15px;line-height:1.6;color:#625969;max-width:90ch;margin-top:-12px}
+@media(max-width:700px){
+ .consultation-scope{gap:24px}
+ .consultation-scope-content{grid-template-columns:minmax(0,1fr);gap:22px}
+ .consultation-next{flex-direction:column;align-items:flex-start;gap:14px}
+ .services .consultation-scope .consultation-extra{margin-top:-8px}
+}
+
+/* Concrete working principles, matching the approved standalone preview. */
+.benefits-refined>h2{font-size:var(--section-title);line-height:1.02;letter-spacing:-.025em;max-width:760px;margin-bottom:44px}
+.benefits-refined .preview-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 48px}
+.benefits-refined .preview-item{display:flex;align-items:flex-start;gap:20px;padding:28px 0 32px;border-top:1px solid #bba6c066;min-width:0}
+.benefits-refined .preview-icon{display:grid;place-items:center;flex:0 0 44px;width:44px;height:44px;border-radius:15px 3px 15px 15px;background:#e6d5ee;color:#54425d}
+.benefits-refined .preview-item:nth-child(2n) .preview-icon{background:#e2e8cf;color:#4f5939}
+.benefits-refined .preview-icon svg{width:23px;height:23px}
+.benefits-refined .preview-item h3{font-family:var(--sans);font-size:20px;font-weight:600;letter-spacing:-.02em;line-height:1.35;margin:0 0 10px}
+.benefits-refined .preview-item p{font-size:16px;line-height:1.65;max-width:44ch;color:#625a54}
+@media(max-width:700px){
+ .benefits-refined>h2{margin-bottom:28px}
+ .benefits-refined .preview-grid{grid-template-columns:1fr}
+ .benefits-refined .preview-item{gap:14px;padding:22px 0}
+ .benefits-refined .preview-item h3{font-size:18px}
+ .benefits-refined .preview-icon{width:38px;height:38px;flex-basis:38px}
+}
+
+.footer-intro .footer-business-word{color:var(--cream)}
+
+/* Readable supporting text and shared grid constraints at every width. */
+.service-choice .sd-package p,.service-choice .sd-package li{font-family:var(--sans);font-size:16px;line-height:1.65}
+.service-choice .sd-package ul{padding-left:20px}
+.benefits-refined .preview-item>div{min-width:0}
+.service-grid,.sd-packages,.review-track,.faq-answers,.footer-grid{min-width:0}
+.services .service-grid .service p{line-height:1.55}
+.footer .footer-intro>span,.footer .footer-nav{font-size:15px;line-height:1.6}
+@media(max-width:700px){
+ .hero-wrap .hero h1{overflow-wrap:normal}
+ .personal-contact-person strong,.personal-contact-person div>span{overflow-wrap:anywhere}
+ .services .service-grid .service p{max-width:28ch}
+}
+
+/* Name and profession wrap naturally, retaining a clear hierarchy. */
+.hero-wrap .header .brand-name{display:block}
+.hero-wrap .header .brand>span:last-child{min-width:0}
+@media(max-width:700px){
+ .hero-wrap .header .brand{flex:1;min-width:0}
+ .hero-wrap .header .brand>span:last-child{max-width:240px}
+}

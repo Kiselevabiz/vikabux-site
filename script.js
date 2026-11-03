@@ -91,4 +91,3 @@ document.querySelectorAll('.faq-trigger').forEach(trigger => {
   article.classList.add('faq-ready');
   trigger.addEventListener('click', () => setOpen(trigger.getAttribute('aria-expanded') !== 'true'));
 });
-

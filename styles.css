@@ -512,3 +512,26 @@ a.button .cta-arrow,a.consultation-button .cta-arrow{width:16px;height:16px;flex
  .hero-wrap .header .brand{flex:1;min-width:0}
  .hero-wrap .header .brand>span:last-child{max-width:240px}
 }
+
+/* Mobile introduction brings the portrait into the reading flow. */
+.hero-mobile-photo{display:none}
+@media(max-width:700px){
+ .hero-wrap .hero-photo{display:none}
+ .hero-copy{display:flex;flex-direction:column}
+ .hero-copy>.eyebrow{order:0;align-self:flex-start}
+ .hero-copy>h1{order:1}
+ .hero-copy>.hero-lead{order:2}
+ .hero-copy>.hero-mobile-photo{display:block;order:3;width:100%;height:clamp(250px,76vw,360px);object-fit:cover;object-position:center 30%;border-radius:22px 4px 22px 22px;margin:4px 0 22px}
+ .hero-copy>.actions{order:6;margin:0 0 20px}
+ .hero-copy>.hero-situations{order:4}
+ .hero-copy>.hero-consultation{order:5}
+ .hero-copy>.hero-contact-hint{order:7}
+ .hero-wrap .hero-identity{margin:20px 0 24px}
+}
+
+.hero-mobile-identity{display:none}
+@media(max-width:700px){
+ .hero-wrap .hero-desktop-identity{display:none}
+ .hero-copy>.hero-mobile-photo{margin-bottom:0}
+ .hero-wrap .hero-copy>.hero-mobile-identity{display:block;order:3;position:relative;right:auto;bottom:auto;min-width:0;margin:12px 0 22px;padding:14px 16px}
+}

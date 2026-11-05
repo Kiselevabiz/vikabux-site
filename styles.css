@@ -535,3 +535,51 @@ a.button .cta-arrow,a.consultation-button .cta-arrow{width:16px;height:16px;flex
  .hero-copy>.hero-mobile-photo{margin-bottom:0}
  .hero-wrap .hero-copy>.hero-mobile-identity{display:block;order:3;position:relative;right:auto;bottom:auto;min-width:0;margin:12px 0 22px;padding:14px 16px}
 }
+
+.service-choice .inventory-package{grid-column:1/-1;background:#e8e3dc}
+
+.services .consultation-scope .consultation-price{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 20px;margin:0;font-size:17px;line-height:1.5}.consultation-price strong{font-family:var(--serif);font-size:36px;line-height:1.1;font-weight:600;white-space:nowrap}
+
+/* The small opening ribbon carries the emotional promise. */
+.hero-wrap .hero .eyebrow.gradient-label{white-space:normal;max-width:100%;line-height:1.5;text-transform:none;letter-spacing:0}
+
+.services .service-grid .inventory{grid-column:1/-1;min-height:240px;background:#e4ddcd}
+.inventory::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#e4ddcd 0%,#e4ddcdf0 42%,transparent 76%)}
+.services .service-grid .inventory p{max-width:32ch}
+@media(max-width:700px){.services .service-grid .inventory{grid-column:1;min-height:330px}.inventory img{object-position:75% center}.inventory::before{background:linear-gradient(180deg,#e4ddcd 0%,#e4ddcde8 48%,#e4ddcd33 100%)}}
+
+/* Case folders: native details support keyboard and no-JavaScript reading. */
+.case-folders-hint{font-size:16px;line-height:1.65;margin-bottom:30px;color:#625a54}
+.case-folders .folders{padding-top:16px}
+.case-folders .folder{position:relative;margin:0 0 26px;background:var(--folder);border:1px solid #211b1830;border-radius:0 20px 20px 20px;box-shadow:0 5px 0 #211b1809}
+.case-folders .folder::before{content:"";position:absolute;top:-13px;left:-1px;width:110px;height:14px;background:var(--folder);border:1px solid #211b1830;border-bottom:0;border-radius:10px 14px 0 0}
+.case-folders summary{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;align-items:center;list-style:none;cursor:pointer;padding:24px 28px;min-height:100px}
+.case-folders summary::-webkit-details-marker{display:none}
+.case-folders .case-name{display:block;font:500 clamp(26px,3vw,36px)/1.12 var(--serif)}
+.case-folders .case-fact{display:block;font-size:14px;margin-top:8px;color:#544d48}
+.case-folders .folder-arrow{width:36px;height:36px;border:1px solid #211b1844;border-radius:50%;display:grid;place-items:center;transition:transform .2s}
+.case-folders .folder-arrow svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.5}
+.case-folders .folder[open] .folder-arrow{transform:rotate(180deg)}
+.case-folders summary:hover .case-name{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px}
+.case-folders summary:focus-visible{outline:3px solid #765386;outline-offset:4px;border-radius:12px}
+.case-folders .folder-body{padding:0 28px 28px}
+.case-folders .case-sheet{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px;padding:26px;background:#faf8f3;border-radius:12px;box-shadow:0 2px 8px #211b1809}
+.case-folders .case-sheet h3{font:600 16px/1.4 var(--sans);margin:0 0 10px}
+.case-folders .case-sheet p{font-size:16px;line-height:1.7;margin:0}
+.case-folders .case-sheet>div{min-width:0}
+.case-folders .case-sheet>div:last-child{border-left:2px solid #b89ac8;padding-left:20px}
+@media(max-width:700px){.case-folders .case-sheet{grid-template-columns:1fr;gap:22px;padding:20px}.case-folders .folder-body{padding:0 12px 12px}.case-folders summary{padding:20px 16px;gap:12px}.case-folders .case-fact{font-size:14px}.case-folders .case-sheet>div:last-child{border-left:0;border-top:1px solid #b89ac866;padding:18px 0 0}}
+@media(prefers-reduced-motion:reduce){.case-folders .folder-arrow{transition:none}}
+
+/* Tablets need wider service columns so titles and copy are not clipped. */
+@media(min-width:701px) and (max-width:1000px){
+ .services .service-grid{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto;grid-auto-rows:minmax(280px,auto)}
+ .services .service-grid .keeping{grid-column:1/-1;grid-row:auto;min-height:320px}
+ .services .service-grid .taxes,.services .service-grid .restore{grid-column:auto;min-height:320px}
+ .services .service-grid .consult,.services .service-grid .inventory{grid-column:1/-1;min-height:240px}
+}
+
+/* Preserve the photographs while keeping dark copy on a calm light field. */
+.services .taxes::before{background:linear-gradient(155deg,#dde7b9fa 0%,#dde7b9f2 48%,#dde7b978 72%,transparent 92%)}
+.services .restore::before{background:linear-gradient(155deg,#e5c4f9fa 0%,#e5c4f9e8 48%,#e5c4f964 72%,transparent 92%)}
+.services .consult::before{background:linear-gradient(105deg,#e7dfd5fa 0%,#e7dfd5e8 46%,#e7dfd540 72%,transparent 90%)}
